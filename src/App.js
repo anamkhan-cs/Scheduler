@@ -1,4 +1,3 @@
-import React from 'react';
 import 'rbx/index.css';
 import { Button, Container, Title } from 'rbx';
 import React, { useState, useEffect } from 'react';
@@ -67,6 +66,7 @@ const App = () =>  {
       }
       fetchSchedule();
     }, [])
+    
     return (
       <Container>
         <Banner title={ schedule.title } />
@@ -74,14 +74,5 @@ const App = () =>  {
       </Container>
     );
 };
-
-const fetchSchedule = async () => {
-  const response = await fetch(url);
-  if (!response.ok) throw response;
-  const json = await response.json();
-  setSchedule(json);
-};
-
-
 
 export default App;
