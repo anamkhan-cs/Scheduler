@@ -23,7 +23,14 @@ const useSelection = () => {
 const TermSelector = ({ state }) => (
     <Button.Group hasAddons>
       {
-        Object.values(terms).map(value => <Button key={value} color= { buttonColor (value === state.term) } onClick = { () => state.setTerm(value) }>{ value }</Button>)
+        Object.values(terms).
+        map(value => 
+        <Button key={value} 
+        data-cy={value}
+        color= { buttonColor (value === state.term) } 
+        onClick = { () => state.setTerm(value) }>
+          { value }
+          </Button>)
       }
     </Button.Group>
 );
