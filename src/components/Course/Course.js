@@ -36,7 +36,9 @@ const timeParts = meets => {
   };
   
   const Course = ({ course, state, user }) => (
-    <Button color={ buttonColor(state.selected.includes(course)) }
+    <Button 
+      data-cy="course"
+      color={ buttonColor(state.selected.includes(course)) }
       onClick={ () => state.toggle(course) }
       onDoubleClick={ user ? () => moveCourse(course) : null }
       disabled={ hasConflict(course, state.selected) }
